@@ -1,0 +1,17 @@
+Ubuntu Installer for the Playstation 3 System.
+* This not in anyway endorsed by Sony and all other Sony companies/entities that are in existance.
+* All software written here was written by hand and does not use any Sony Proprietary Code.
+
+These are the first attempts at an official installer for the PS3.
+
+Reasons for this installer:
+- People make mistakes.  Simple as that. To err is human.
+- This installer is to automate and hopefully cut down on chatter in the IRC rooms
+- Make installing Ubuntu easier on the PS3.
+
+
+A changelog will be provided here:
+
+v0.01
+- Script echo's "I do not work yet".
+
