@@ -18,6 +18,13 @@ Reasons for this installer:
 
 TODO:
 
+v0.98
+- Lots of beta testing for 100% run through.
+
+v0.95
+- Lots of testing.
+- Add Ubuntu menu to installer.
+
 v0.91
 - Attempt to add preinstall partitioning script.
 - Lots and lots of bug tests.
@@ -37,6 +44,12 @@ v0.01
 
 A changelog will be provided here:
 
+v0.95
+- Added bunch of bug fixes.
+- Added menu for Ubuntu Logo.
+v0.91
+- Added preinstall partitioning script.
+- Lots and lots of bug fixes
 v0.89
 - Added git clone ability to download latest kernel.
 - Added kernel compiling (Very buggy at the moment).
