@@ -2,16 +2,65 @@ Ubuntu Installer for the Playstation 3 System.
 * This not in anyway endorsed by Sony and all other Sony companies/entities that are in existance.
 * All software written here was written by hand and does not use any Sony Proprietary Code.
 
-These are the first attempts at an official installer for the PS3.
+Disclaimer:
+* I am in no way responsible for anything that happens to your Playstation 3 while using this installer.
+* There should be no reason for this software to brick your Playstation 3 system, but in the event it
+* does, I am not responsible for it.  Use at your own risk!
+
+* This installer was also meant to be used with Gitbrew OtherOS CFW's. Rebug may work but untested.
+These are the first attempts at an official Ubuntu installer for the Playstation 3.
 
 Reasons for this installer:
 - People make mistakes.  Simple as that. To err is human.
-- This installer is to automate and hopefully cut down on chatter in the IRC rooms
+- This installer is to automate and hopefully cut down on chatter in the IRC rooms.
 - Make installing Ubuntu easier on the PS3.
+
+
+TODO:
+
+v0.91
+- Attempt to add preinstall partitioning script.
+- Lots and lots of bug tests.
+
+v0.89
+- Add git clone ability to clone the latest kernel.
+- Add kernel compiling.
+- Add reboot and unplug usb keyboard message.
+- Attempt to add pre-installation script to prepare the partitioning.
+
+v0.71
+- Add most of the functions of the installer to the script.
+
+v0.01
+- Write comments
 
 
 A changelog will be provided here:
 
+v0.89
+- Added git clone ability to download latest kernel.
+- Added kernel compiling (Very buggy at the moment).
+- Added reboot and unplug keyboard message at the end of the installer.
+v0.71
+- Added umount of ps3dd2.
+- Added creation of chroot dir.
+- Added choice of formatting options including option to skip if manually formatted before running script.
+- Added mounting of chroot dir to /dev/ps3dd2.
+- Added cleaning of drive & check in case installer needs to be re-run (For testing and fresh starts).
+- Added Debootstrapping.
+- Added chrooting process.
+- Added terminal color addition.
+- Added automatic fstab entries based on selection of formatting options.
+- Added timezone installer.
+- Added the option to choose your own Playstation 3 name and auto configure hostname.
+- Added automatic entries for /etc/network/interfaces file.
+- Added options for resolv.conf.  Choose between default 192.168.1.1 or adding your own gateway ip.
+    and automated resolv.conf entries.
+- Added automatic aptitude sources entries.
+- Added locales and console data installers.
+- Added tasksel installation.
+- Added package cleanup after all packages have been installed.
+
+
 v0.01
 - Script echo's "I do not work yet".
-
