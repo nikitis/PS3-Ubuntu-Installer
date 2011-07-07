@@ -29,7 +29,7 @@ echo "If you have not yet created the /dev/ps3dd region by running the create_hd
 echo "script, please hit ctrl-c now and do this first before running this script"
 echo " "
 echo "This installer will create a /dev/ps3dd1 dedicated for swap,"
-echo "and /dev/ps3dd2 dedicated for root (/). If you have already created a"
+echo -e "and /dev/ps3dd2 dedicated for root \(/\). If you have already created a"
 echo "partitioning scheme this script will attempt to remove them and setup the default"
 echo "scheme listed above.  In furture releases I will provide choice of schema."
 echo " 
@@ -42,7 +42,7 @@ read -p "Press any key to continue."
 
 
 ## Umounting /dev/ps3dd2 in case of previous attempts at installs
-echo "Attempting to umount /dev/ps3dd2 in case of previous attempts at installs. (Ignore Errors)"
+echo -e "Attempting to umount /dev/ps3dd2 in case of previous attempts at installs. \(Ignore Errors\)"
 rm -rf /tmp/petitboot/mnt/ps3dd2/*
 umount /dev/ps3dd2
 
@@ -53,7 +53,7 @@ DEVICE="/dev/ps3dd"
 
 
 ## parted commands
-read -p "Have you already created partitions on your PS3 for Linux? (y/n): " G
+read -p "Have you already created partitions on your PS3 for Linux? \(y/n\): " G
 if [ "$G" = n ]; then
 	parted ${DEVICE} --script -- mklabel GPT
 	parted ${DEVICE} --script -- mkpart primary 0 2GB
