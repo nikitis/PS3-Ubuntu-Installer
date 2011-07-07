@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ash
 
 ############# Section 2 of Ubuntu Installer ###########
 ## Had to add this section due to chrooting process. ##
@@ -18,7 +18,7 @@ export TERM=xterm-color
 echo " "
 echo "Setting up fstab entries. . ."
 echo " "
-echo -e "/dev/ps3dd2	/		extextvar	defaults		0 1\n/dev/ps3vram	none		swap	sw			0 0\n/dev/ps3dd1	none		swap	sw			0 0\n/dev/sr0	/mnt/cdrom	auto	noauto,ro		0 0\nproc		/proc		proc	defaults		0 0\nshm		/dev/shm	tmpfs	nodev,nosuid,noexec	0 0\n" > /etc/fstab
+echo -e "/dev/ps3dd2	/		extextvar	defaults		0 1\n/dev/ps3vram	none		swap	sw			0 0\n/dev/ps3dd1	none		swap	sw			0 0\n/dev/sr0	/mnt/cdrom	auto	noauto,ro		0 0\nproc		/proc		proc	defaults		0 0\nshm		/dev/shm	tmpfs	nodev,nosuid,noexec	0 0\ndev	/dev	tmpfs	rw	0 0" > /etc/fstab
 
 
 ## Setting up timezone
@@ -144,6 +144,7 @@ make
 make install
 make modules_install
 cd /
+rm linux-2.6.tgz
 echo " "
 echo "Kernel compiling is done if no errors occured."
 echo " "
@@ -157,7 +158,7 @@ echo " "
 
 E=`ls /boot | grep vmlinux`
 
-echo -e "Ubuntu=/boot/$E root=/dev/ps3dd2\ndebian_Hugepages=/boot/$E root=/dev/ps3dd2 hugepages=1" > /etc/kboot.conf
+echo -e "Ubuntu=/boot/$E root=/dev/ps3dd2 noplymouth nosplash\nUbuntu_Hugepages=/boot/$E root=/dev/ps3dd2 hugepages=1 noplymouth nosplash" > /etc/kboot.conf
 
 
 ## Creating /dev/ps3flash device for ps3-utils
