@@ -1,4 +1,4 @@
-#!/bin/ash
+#!/bin/bash
 
 ############# Section 2 of Ubuntu Installer ###########
 ## Had to add this section due to chrooting process. ##
