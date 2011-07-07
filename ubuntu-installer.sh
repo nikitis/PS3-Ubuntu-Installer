@@ -29,10 +29,10 @@ echo "If you have not yet created the /dev/ps3dd region by running the create_hd
 echo "script, please hit ctrl-c now and do this first before running this script"
 echo " "
 echo "This installer will create a /dev/ps3dd1 dedicated for swap,"
-echo -e "and /dev/ps3dd2 dedicated for root \(/\). If you have already created a"
+echo "and /dev/ps3dd2 dedicated for root (/). If you have already created a"
 echo "partitioning scheme this script will attempt to remove them and setup the default"
 echo "scheme listed above.  In furture releases I will provide choice of schema."
-echo " 
+echo "
 echo "The only script that should be run is ubuntu-installer.sh  Do not attempt to run"
 echo "any other files that have come with this installer."
 echo " "
@@ -42,7 +42,7 @@ read -p "Press any key to continue."
 
 
 ## Umounting /dev/ps3dd2 in case of previous attempts at installs
-echo -e "Attempting to umount /dev/ps3dd2 in case of previous attempts at installs. \(Ignore Errors\)"
+echo "Attempting to umount /dev/ps3dd2 in case of previous attempts at installs. (Ignore Errors)"
 rm -rf /tmp/petitboot/mnt/ps3dd2/*
 umount /dev/ps3dd2
 
@@ -68,7 +68,7 @@ elif [ "$G" = y ]; then
 		parted ${DEVICE} --script -- mkpart primary 0 2GB
 		parted ${DEVICE} --script -- mkpart primary 2GB -1
 		parted ${DEVICE} --script -- print
-	elif [ "$H" = 2 ]; then 
+	elif [ "$H" = 2 ]; then
 		parted ${DEVICE} --script -- rm 2
 		parted ${DEVICE} --script -- rm 1
 		dd if=/dev/zero of=/dev/${DEVICE} bs=512 count 200
@@ -106,7 +106,7 @@ else
 	reboot
 fi
 
- 
+
 ## Unmounts the partition
 echo "Attempting to unmount the partition /dev/ps3dd2. If it errors it should be okay."
 echo "Unmounting partition /dev/ps3dd2"
@@ -163,7 +163,7 @@ echo "Mounting /dev/ps3dd2 to the chroot dir."
 mount /dev/ps3dd2 /mnt/ubuntu
 
 
-## This step is used for when the script is re-run 
+## This step is used for when the script is re-run
 echo " "
 echo "Cleaning formatted drive (In case there was previous install attempt.)."
 rm -rf /mnt/ubuntu/*
