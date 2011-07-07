@@ -32,7 +32,7 @@ echo "This installer will create a /dev/ps3dd1 dedicated for swap,"
 echo "and /dev/ps3dd2 dedicated for root (/). If you have already created a"
 echo "partitioning scheme this script will attempt to remove them and setup the default"
 echo "scheme listed above.  In furture releases I will provide choice of schema."
-echo "
+echo " "
 echo "The only script that should be run is ubuntu-installer.sh  Do not attempt to run"
 echo "any other files that have come with this installer."
 echo " "
@@ -53,7 +53,7 @@ DEVICE="/dev/ps3dd"
 
 
 ## parted commands
-read -p "Have you already created partitions on your PS3 for Linux? \(y/n\): " G
+read -p "Have you already created partitions on your PS3 for Linux? (y/n): " G
 if [ "$G" = n ]; then
 	parted ${DEVICE} --script -- mklabel GPT
 	parted ${DEVICE} --script -- mkpart primary 0 2GB
