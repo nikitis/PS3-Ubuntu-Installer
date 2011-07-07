@@ -71,7 +71,7 @@ elif [ "$G" = y ]; then
 	elif [ "$H" = 2 ]; then
 		parted ${DEVICE} --script -- rm 2
 		parted ${DEVICE} --script -- rm 1
-		dd if=/dev/zero of=/dev/${DEVICE} bs=512 count 200
+		dd if=/dev/zero of=/dev/${DEVICE} bs=512 count=200
 		parted ${DEVICE} --script -- mklabel GPT
 		parted ${DEVICE} --script -- mkpart primary 0 2GB
 		parted ${DEVICE} --script -- mkpart primary 2GB -1
