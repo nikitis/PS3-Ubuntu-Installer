@@ -42,9 +42,10 @@ read -p "Press any key to continue."
 
 
 ## Umounting /dev/ps3dd2 in case of previous attempts at installs
-echo "Attempting to umount /dev/ps3dd2 in case of previous attempts at installs. (Ignore Errors)"
-rm -rf /tmp/petitboot/mnt/ps3dd2/*
+echo "Attempting to umount /dev/ps3dd2 in case of previous attempts were made at installation..."
 umount /dev/ps3dd2
+rm -rf /tmp/petitboot/mnt/ps3dd2/*
+
 
 
 ## Setting up device variable
