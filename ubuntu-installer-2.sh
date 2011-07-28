@@ -101,6 +101,7 @@ echo "Please set a new root password."
 passwd
 echo " "
 
+## Adding new base user
 read -p "Please enter in a username you would like to use: " F
 if [ "$F" = "" ]; then
 	echo "That username was not valid"
@@ -109,7 +110,12 @@ else
 	adduser $F
 fi 
 
+## Adding user to admin group
+echo "Adding $F to admin group"
+useradd -G admin $F
 
+
+## Installing dev packages for kernel build
 echo " "
 echo "Installing development packages for kernel build"
 echo " "
