@@ -166,7 +166,7 @@ else
 fi
 
 
-## Mounts / to /mnt/debian/
+## Mounts / to /mnt/ubuntu/
 echo " "
 echo "Mounting /dev/ps3dd2 to the chroot dir."
 mount /dev/ps3dd2 /mnt/ubuntu
