@@ -43,7 +43,9 @@ read -p "Press any key to continue."
 
 ## Umounting /dev/ps3dd2 in case of previous attempts at installs
 echo "Attempting to umount /dev/ps3dd2 in case of previous attempts were made at installation..."
+umount /dev/ps3dd1
 umount /dev/ps3dd2
+rm -rf /tmp/petitboot/mnt/ps3dd1/*
 rm -rf /tmp/petitboot/mnt/ps3dd2/*
 
 
@@ -54,7 +56,7 @@ DEVICE="/dev/ps3dd"
 
 
 ## parted commands
-read -p "Have you already created partitions on your PS3 for Linux? (y/n): " G
+read -p "Have you already created partitions on your PS3 after running create_hdd_script.sh for Linux? (y/n): " G
 if [ "$G" = n ]; then
 	parted ${DEVICE} --script -- mklabel GPT
 	parted ${DEVICE} --script -- mkpart primary 0 2GB
@@ -109,14 +111,14 @@ fi
 
 
 ## Unmounts the partition
-echo "Attempting to unmount the partition /dev/ps3dd2. If it errors it should be okay."
-echo "Unmounting partition /dev/ps3dd2"
+echo "Attempting to unmount the partitions on /dev/ps3dd. If it errors it should be okay."
+echo "Unmounting partitions from /dev/ps3dd"
 umount /dev/ps3dd2
 echo " "
 
 
 ## Creates the directory to chroot to.
-echo "Creating chroot directory /mnt/debian"
+echo "Creating chroot directory /mnt/ubuntu"
 mkdir /mnt/ubuntu
 echo " "
 
