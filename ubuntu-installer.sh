@@ -194,7 +194,7 @@ echo " "
 echo "Copying 2nd half of installer and variables over to post-chrooted environment"
 cp ./ubuntu-installer-2.sh /mnt/ubuntu/tmp/ubuntu-installer-2.sh
 sed -i "s/extvar/$A/g" /mnt/ubuntu/tmp/ubuntu-installer-2.sh
-
+cat /etc/resolv.conf > /mnt/ubuntu/etc/resolv.conf
 
 ## Mounting proc as part of chroot.
 
