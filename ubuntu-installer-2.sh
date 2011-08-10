@@ -34,7 +34,8 @@ read -p "Please enter the name of your Playstation 3 Ubuntu Box. (No spaces or o
 echo " "
 echo "Saving $D into /etc/hostname"
 echo $D > /etc/hostname
-
+touch /etc/hosts
+echo "127.0.0.1		localhost" > /etc/hosts
 
 ## Setting up /etc/network/interfaces
 
