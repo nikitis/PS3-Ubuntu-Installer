@@ -104,7 +104,7 @@ fi
 
 ## Adding user to admin group
 echo "Adding $F to admin group"
-useradd -G admin $F
+usermod -aG sudo $F
 
 
 ## Installing dev packages for kernel build
